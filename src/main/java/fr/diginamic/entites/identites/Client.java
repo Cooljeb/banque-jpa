@@ -44,11 +44,7 @@ public class Client implements Serializable {
     private Banque banque;
 
     /**Lien vers le/les compte(s) des clients**/
-    @ManyToMany
-    @JoinTable(name="COMPTE_CLIENT",
-        joinColumns =@JoinColumn(name ="ID_CPTE", referencedColumnName ="ID_COMPTE"),
-        inverseJoinColumns = @JoinColumn(name = "ID_CLI", referencedColumnName ="ID_CLIENT" )
-    )
+    @ManyToMany(mappedBy = "clients")
     private Set<Compte> comptes;
 
 

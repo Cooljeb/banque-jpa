@@ -15,7 +15,7 @@ import java.util.Set;
 @Table(name = "COMPTE")
 @Inheritance(strategy = InheritanceType.JOINED)
 @DiscriminatorColumn(name = "TYPE_DE_COMPTE")
-public class Compte implements Serializable {
+public abstract class Compte implements Serializable {
 
     // Attributs d'instance
     /**ID cu compte**/
@@ -35,8 +35,8 @@ public class Compte implements Serializable {
     /**Lien vers les clients*/
     @ManyToMany
     @JoinTable(name="COMPTE_CLIENT",
-            joinColumns = @JoinColumn(name = "ID_CLI", referencedColumnName ="ID_CLIENT" ),
-            inverseJoinColumns =@JoinColumn(name ="ID_CPTE", referencedColumnName ="ID_COMPTE")
+            joinColumns =  @JoinColumn(name ="ID_CPTE", referencedColumnName ="ID_COMPTE"),
+            inverseJoinColumns =@JoinColumn(name = "ID_CLI", referencedColumnName ="ID_CLIENT")
     )
     private Set<Client>clients;
 

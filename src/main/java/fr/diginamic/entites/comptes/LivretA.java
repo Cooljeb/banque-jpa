@@ -25,6 +25,7 @@ public class LivretA extends Compte implements Serializable  {
     /**Constructeur**/
     public LivretA() {
         super();
+
     }
 
     //Getter et Setter

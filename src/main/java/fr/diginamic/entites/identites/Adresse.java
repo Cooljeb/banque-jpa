@@ -8,20 +8,21 @@ import jakarta.persistence.Embeddable;
 public class Adresse  {
 
    /**numéro de l'adresse**/
-   @Column(length = 5)
+   @Column(name ="NUMERO", length = 5)
    private Integer numero;
 
    /**rue**/
-   @Column(length = 200)
+   @Column(name = "RUE", length = 200)
    private String rue;
 
    /**Code Postal**/
-   @Column(length = 5)
+   @Column(name = "CODE_POSTAL", length = 5)
    private int codePostal;
 
    /**Ville**/
-   @Column(length = 70)
+   @Column(name="VILLE", length = 70)
    private String ville;
+
 
    /**
     * Constructeur

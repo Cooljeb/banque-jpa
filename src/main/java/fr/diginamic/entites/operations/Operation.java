@@ -4,6 +4,7 @@ import fr.diginamic.entites.comptes.Compte;
 import jakarta.persistence.*;
 
 import java.io.Serializable;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 /***
@@ -23,7 +24,7 @@ public class Operation implements Serializable {
 
     /**date de l'opération**/
     @Column(name = "DATE",nullable = false)
-    private LocalDateTime date;
+    private LocalDate date;
 
     /**Montant de l'opération**/
     @Column(name = "MONTANT", nullable = false)
@@ -62,11 +63,11 @@ public class Operation implements Serializable {
      *
      * @return date
      */
-    public LocalDateTime getDate() {
+    public LocalDate getDate() {
         return date;
     }
 
-    public void setDate(LocalDateTime date) {
+    public void setDate(LocalDate date) {
         this.date = date;
     }
 
